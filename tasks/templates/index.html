@@ -6,5 +6,27 @@
 <body>
 	<h1>My Home Page</h1>
 	<p>My homw page for django application.</p>
+	<table border="2">
+		<thead>
+			<tr>
+				<th>SUBJECT</th>
+				<th>MARKS</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			{% for sub, marks in subjects.items %}
+			<tr>
+				<td>
+					{{sub}}
+				</td>
+				<td>
+					{{marks}}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
 </body>
 </html>

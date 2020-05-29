@@ -4,4 +4,5 @@ from django.shortcuts import render
 
 
 def home(request):
-	return render(request,'index.html')
+	a = {"ENGLISH":87,"MATHS":94,"SCIENCE":88}
+	return render(request,'index.html',{'subjects':a})
