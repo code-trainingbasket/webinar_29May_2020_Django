@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
+	<title>ALL TASKS</title>
 	<style>
 		body{
 		background-color: #8983a6;
@@ -41,28 +41,28 @@ input::placeholder {
 	</style>
 </head>
 <body>
-	<h1>My Home Page</h1>
-	<p>My homw page for django application.</p>
-	<table border="2">
-		<thead>
-			<tr>
-				<th>SUBJECT</th>
-				<th>MARKS</th>
-			</tr>
-		</thead>
-		<tbody>
 
-			{% for sub, marks in subjects.items %}
-			<tr>
-				<td>
-					{{sub}}
+	<h1>ALL task</h1>
+	<table border="2">
+		<tr>
+			<th>TASKS</th>
+		</tr>
+		{% for task in alltasks %}
+		<tr>
+			
+				{% if task.complete == True %}
+				<td style="color: red;">
+				<strike>{{task.title}}</strike>
 				</td>
-				<td>
-					{{marks}}
+				{% else %}
+				<td style="color: green;">
+					{{task.title}}
 				</td>
-			</tr>
-			{% endfor %}
-		</tbody>
+				
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
 	</table>
 	
 </body>
